@@ -15,11 +15,7 @@ exports.handler = (event, context, callback) => {
     },
     Output: {
       Key: getOutputName(fileName),
-      PresetId: process.env.TRANSCODE_PRESET,
-      AlbumArt: {
-        MergePolicy: 'Fallback',
-        Artwork: []
-      }
+      PresetId: process.env.TRANSCODE_PRESET
     }
   }, function(err, data) {
     if(err) {
